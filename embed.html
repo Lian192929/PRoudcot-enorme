@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>ChatGPT Embed service</title>
+  <link rel="icon" href="embed.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/css/tether-theme-arrows-dark.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/dark.min.css'><link rel="stylesheet" href="embed.css">
+
+<script type="text/javascript" src="https://cdn.diclotrans.com/sdk/v1/21564/e800d47eed6afb6e0bc789e961dc83a6a2777dc5/lib.js"></script>
+
+<script type="text/javascript" src="https://cdn.diclotrans.com/sdk/v1/21566/e337b9228d0822c655e2011b044dd97e222d5d46/lib.js"></script>
+
+<script type="text/javascript" src="https://cdn.diclotrans.com/sdk/v1/21720/9f5430a8ffae533e52da03d69fbc426a00809e17/lib.js"></script>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"/><a class="server-link" href="https://discord.gg/Fy6tUCJPAq" target="_blank">
+  <div class="badge-container">
+    <div class="badge-text">¿Deseas apoyarnos?</div>
+    <div class="badge-icon"></div>
+    <div class="badge-text badge-text-bottom">Unete a nuestro servidor oficial</div>
+  </div></a>
+<div class="container">
+  <div class="col-md-10 offset-md-1">
+    <div class="card-deck">
+      <div class="card">
+        <div class="card-header">Editor de mensaje Embed</div>
+        <div class="card-block">
+          <form id="form">
+            <div class="form-group">
+              <label>Ajustes básicos</label>
+              <input class="form-control" id="title" type="text" placeholder="titulo"/>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" id="description" placeholder="Descripción"></textarea>
+          </div>
+          
+            <div class="form-group">
+              <input class="form-control" id="url" type="text" placeholder="url"/>
+            </div>
+            <div class="form-group">
+              <label for="color">Color</label>
+              <input class="form-control square-color" id="color" type="color"/>
+          </div>
+          
+            <div class="form-group">
+              <label>Configuración de imagen Thumbnail</label>
+              <input class="form-control" id="icon" type="text" placeholder="icono"/>
+            </div>
+            <div class="form-group">
+              <label>Configuración del Autor</label>
+              <input class="form-control" id="author_name" type="text" placeholder="nombre de autor"/>
+            </div>
+            <div class="form-group">
+              <input class="form-control" id="author_url" type="text" placeholder="link del autor"/>
+            </div>
+            <div class="form-group">
+              <input class="form-control" id="author_icon" type="text" placeholder="icono del autor"/>
+            </div>
+            <div class="form-group">
+              <label>Campos</label>
+            </div>
+            <div class="input-fields"></div>
+            <div class="form-group">
+              <label>Configuración de pie de página</label>
+              <input class="form-control" id="footer" type="text" placeholder="texto de pie de página"/>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div><br/>
+  <div class="col-md-8 offset-md-2">         
+    <div class="card">
+      <div class="card-header">Vista previa de embed</div>
+      <div class="card-block preview">
+        <div class="wrapper">
+          <div class="side-colored"></div>
+          <div class="card embed">
+            <div class="card-block">
+              <div class="embed-inner"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><br/>
+  <div class="col-md-10 offset-md-1">
+    <div class="card">
+      <div class="card-header">Java code</div>
+      <div class="card-block">
+        <pre><code class="python source"></code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js'></script><script  src="embed.js"></script>
+
+</body>
+</html>

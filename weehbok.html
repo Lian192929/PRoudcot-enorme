@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Creador de Webhooks</title>
+  <link rel="icon" type="image/x-icon" href="webhooks.webp">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="web.css">
+
+<meta name="description" content="Crea mensajes Webhooks para tu servidor, facil y rapido (PROXIMAMENTE ACTUALIZACIÓN).">
+<meta property="og:site_name" content="EdgaBot service">
+<meta property="og:url" content="https://edgabot.akiomae.com/pages/services/webhook.html">
+<meta name="title" content="Create Webhooks">
+<meta name="description" content="Crea mensajes Webhooks para tu servidor, facil y rapido (PROXIMAMENTE ACTUALIZACIÓN).">
+<meta name="robots" content="index, follow">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="language" content="Spanish">
+<meta property="og:image" content="https://cdn.discordapp.com/attachments/1052090566575390760/1166252633921695794/webhooks.webp?ex=6549d067&is=65375b67&hm=15fad0f996569c82b409ce3bf38062ee50ccfc5559177b54b4fc99791f8b19fe&">
+<meta property="og:image:width" content="720">
+<meta property="og:image:height" content="720">
+<meta property="og:image:type" content="image/png">
+
+<script type="text/javascript" src="https://cdn.diclotrans.com/sdk/v1/21564/e800d47eed6afb6e0bc789e961dc83a6a2777dc5/lib.js"></script>
+
+<script type="text/javascript" src="https://cdn.diclotrans.com/sdk/v1/21566/e337b9228d0822c655e2011b044dd97e222d5d46/lib.js"></script>
+
+<script type="text/javascript" src="https://cdn.diclotrans.com/sdk/v1/21720/9f5430a8ffae533e52da03d69fbc426a00809e17/lib.js"></script>
+  <style>
+
+.content {
+    display: none;
+}
+
+body {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+  font-family: Arial, sans-serif;
+  color: #fff;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    h3 {
+      margin-top: 10px;
+      font-size: 18px;
+    }
+
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border: none;
+      background: rgba(0, 0, 0, 0.26);
+      color: #fff;
+      border-radius: 5px;
+    }
+
+    input[type="color"] {
+      width: 50px;
+      height: 30px;
+    }
+
+    .button {
+      background: #7790a0;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .button:hover {
+      background: #25c6d1;
+    }
+
+    .custom-tag {
+  background: #ff0000; 
+  color: #000; 
+  border: 1px solid #ff0000; 
+  padding: 2px 5px; 
+  border-radius: 5px; 
+}
+
+.custom-tag2 {
+  background: hsl(189, 100%, 50%);
+  color: #000; 
+  border: 1px solid #00ccff; 
+  padding: 2px 5px; 
+  border-radius: 5px; 
+}
+
+.fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <br>
+    <strong class="fade-in">Principal</strong>
+    <h3 class="fade-in">URL del Webhook</h3>
+    <input class="input fade-in" style="width:350px;font-size:10pt;" id="url" type="text" name="link" placeholder="URL del Webhook"><span
+      class="custom-tag fade-in">Necesario</span>
+    <br>
+    <h3 class="fade-in">Nombre del Webhook</h3>
+    <input class="input fade-in" style="width:350px;font-size:10pt;" id="name" type="text" name="Nombre de usuario (apodo del bot)" placeholder="Apodo para el bot"><span class="custom-tag2 fade-in">Puedes elegir usar esto</span>
+    <br>
+    <h3 class="fade-in">URL de la Imagen del Webhook</h3>
+    <input class="input fade-in" style="width:350px;font-size:10pt;" id="avatar" type="text" name="URL de la imagen del bot" placeholder="URL de la imagen que será el avatar del Webhook" value="https://edgabot.akiomae.com/img/avatar.png"><span class="custom-tag2 fade-in">Puedes elegir usar esto</span>
+    <br>
+    <h3 class="fade-in">Texto del Mensaje</h3>
+    <textarea class="input fade-in" style="width:350px; font-size:10pt;" id="content" name="contenido del mensaje" placeholder="Mensaje que el bot enviará">Akiomae CreMent</textarea>
+    <span class="custom-tag fade-in">Necesario</span>
+    <br><br>
+    <strong class="fade-in">Incrustar (Embed)</strong>
+    <h3 class="fade-in">Autor</h3>
+    <input class="input fade-in" style="width:350px;font-size:10pt;" id="author_name" type="text" name="nombre del autor" placeholder="Nombre del autor de la incrustación"><span class="custom-tag2 fade-in">Puedes elegir usar esto</span>
+    <h3 class="fade-in">URL del Icono del Autor</h3>
+    <input class="input fade-in" style="width:350px;font-size:10pt;" id="author_icon" type="text" name="URL del icono del autor" placeholder="URL del icono del autor de la incrustación"><span class="custom-tag2 fade-in">Puedes elegir usar esto</span>
+    <br>
+    <h3 class="fade-in">Título</h3>
+    <input class="input fade-in" style="width:350px;font-size:10pt;" id="embed_title" type="text" name="título de la incrustación" placeholder="Título de la incrustación"><span class="custom-tag2 fade-in">Puedes elegir usar esto</span>
+    <br>
+    <h3 class="fade-in">Contenido</h3>
+    <textarea class="input fade-in" style="width:350px; font-size:10pt;" id="embed_content" name="texto de la incrustación" placeholder="Descripción/contenido/texto de la incrustación"></textarea>
+    <span class="custom-tag2 fade-in">Puedes elegir usar esto</span>
+    <br>
+    <h3 class="fade-in">Color de la Barra Lateral</h3>
+    <input class="input fade-in" style="width:350px;font-size:10pt;" id="color" type="color" name="color" value="#123456">
+    <span class="custom-tag2 fade-in">Puedes elegir usar esto</span>
+    <br><br>
+    <button id="send" class="button is-primary fade-in" onclick="sendAndMove()">Enviar</button>
+  </div>
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const elementsToAnimate = document.querySelectorAll('.fade-in');
+      elementsToAnimate.forEach((element, index) => {
+        setTimeout(() => {
+          element.style.opacity = 1;
+          element.style.transform = 'translateY(0)';
+        }, 100 * index);
+      });
+    });
+
+    function send() {
+    }
+
+    function sendAndMove() {
+  
+  send();
+
+ 
+  const button = document.getElementById("send");
+  
+ 
+  const originalPosition = button.getBoundingClientRect();
+
+  
+  button.style.transform = "translateX(100px)";
+
+  
+  setTimeout(function() {
+    button.style.transform = "translateX(0)";
+  }, 500); 
+}
+
+function send() {
+}
+
+  </script>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js'></script><script  src="web.js"></script>
+</body>
+</html>

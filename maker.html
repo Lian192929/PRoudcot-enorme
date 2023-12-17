@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>ChatGPT Host</title>
+  <link rel="icon" href="bots.png">
+
+  <script type="text/javascript" src="https://cdn.diclotrans.com/sdk/v1/21564/e800d47eed6afb6e0bc789e961dc83a6a2777dc5/lib.js"></script>
+
+<script type="text/javascript" src="https://cdn.diclotrans.com/sdk/v1/21566/e337b9228d0822c655e2011b044dd97e222d5d46/lib.js"></script>
+
+<script type="text/javascript" src="https://cdn.diclotrans.com/sdk/v1/21720/9f5430a8ffae533e52da03d69fbc426a00809e17/lib.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #424380;
+      background-image: url('fondo.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: white;
+      margin: 0; 
+      padding: 0; 
+    }
+
+    h2 {
+      text-align: center;
+      padding: 20px;
+      background-color: #3498db;
+      color: white;
+      margin-top: 0; 
+    }
+
+    hr {
+      border: 1px solid #3498db;
+      margin: 20px 0;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin: 10px 0; 
+    }
+
+    button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px; 
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    a {
+      color: #3498db;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    div#msg {
+      font-weight: bold;
+    }
+
+    pre#log {
+      background-color: rgb(3, 3, 3);
+      padding: 10px;
+      border: 1px solid #050505;
+      border-radius: 5px;
+      overflow: auto;
+    }
+
+    
+    @media (max-width: 600px) {
+      h2 {
+        font-size: 24px; 
+      }
+    }
+  </style>
+</head>
+<body>
+  <h2>Enciende tu Bot de Discord con nosotros</h2>
+  Token: <input type="password" size="30" id="token" placeholder="Ingresa el Token de tu Bot">
+<button onclick="togglePassword()">Mostrar/Ocultar</button>
+  <button id="connect">Login</button>
+
+  <div>
+    <h3>Estado del Bot</h3>
+    <form id="status-form">
+      <label for="status-text">Frase de estado:</label>
+      <input type="text" id="status-text" placeholder="Escribe una frase de estado" value="Team Akiomae CreMent" />
+      <button type="submit">Establecer Estado</button>
+    </form>    
+  </div>
+  
+
+  <hr>
+  Puedes crear tu bot desde <a target="_blank" href="https://discordapp.com/developers/applications/me">aquí</a>!
+  <hr>
+  <div>Si desea invitar a su bot a un servidor, <span id="msg">ingrese la ID de su aplicación.</span></div>
+  Client ID: <input type="text" size="10" id="client" placeholder="Ingresa la ID de tu Bot para invitarlo a tu servidor"> 
+  <hr>
+    
+  <hr>
+  <div>Registros: <br><pre id="log"></pre></div>
+  <script src='https://rawgit.com/izy521/discord.io/master/lib/index.js'></script>
+  <script src="host.js"></script>
+  <script>
+    function togglePassword() {
+      const tokenInput = document.getElementById('token');
+      if (tokenInput.type === 'password') {
+        tokenInput.type = 'text';
+      } else {
+        tokenInput.type = 'password';
+      }
+    }
+    </script>
+</body>
+</html>

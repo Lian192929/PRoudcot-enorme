@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="boostrap.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link href="comands.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="shortcut icon" href="descarga.png" type="image/x-icon">
+    <title>ChatGPT / Comandos</title>
+
+    <script type="text/javascript"
+        src="https://cdn.diclotrans.com/sdk/v1/21564/e800d47eed6afb6e0bc789e961dc83a6a2777dc5/lib.js"></script>
+
+    <script type="text/javascript"
+        src="https://cdn.diclotrans.com/sdk/v1/21566/e337b9228d0822c655e2011b044dd97e222d5d46/lib.js"></script>
+
+    <script type="text/javascript"
+        src="https://cdn.diclotrans.com/sdk/v1/21720/9f5430a8ffae533e52da03d69fbc426a00809e17/lib.js"></script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <div class="navbar navbar-expand-md bg-dark navbar-dark">
+        <div class="container">
+            <a href="index.html" class="navbar-brand text-info">ChatGPT Oficial</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainmenu"><span
+                    class="navbar-toggler-icon"></span></button>
+
+            <div class="collapse navbar-collapse" id="mainmenu">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a href="index.html"nav-link">Inicio</a></li>
+                    <li class="nav-item"><a href="productos.html" class="nav-link">Servicios</a></li>
+                </ul>
+                <li class="navbar-nav nav-item"><a
+                        href="https://discord.com/api/oauth2/authorize?client_id=1052036415678074941&permissions=8&scope=bot"
+                        class="btn btn-outline-info">Invitar</a></li>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <section style="margin-top: 9%;">
+            <div class="row">
+                <div class="col-sm-6 my-1">
+                    <h2 class="fw-bold">ChatGPT Comandos</h2>
+                    <p class="command-descreption">Encuentre todos los comandos de ChatGPT y la información que necesita
+                        de forma rápida y sencilla</p>
+                </div>
+                <div class="col-sm-6 my-1">
+                    <script async
+                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4050940490843957"
+                        crossorigin="anonymous"></script>
+
+                    <ins class="adsbygoogle" style="display:inline-block;width:100%;height:90px"
+                        data-ad-client="ca-pub-4050940490843957" data-ad-slot="6770580457"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+            <hr>
+        </section>
+        <div class="mt-4"></div>
+        <div class="row">
+            <div class="col-md-4 my-2">
+                <div class="card p-3">
+                    <h5>Seleccionar categoría de comandos</h5>
+                    <hr />
+                    <button onclick="active(this)" id="CategoryBtnAll"
+                        class="text-decoration-none btn btn-primary mt-2 my-1 p-2"><i
+                            class="fad fa-icons ttt"></i>&nbsp; Todos los comandos</button>
+
+                    <button onclick="active(this)" id="CategoryBtn0"
+                        class="text-decoration-none btn btn-primary mt-2 my-1 p-2"><i class='fas fa-gift ttt'></i>&nbsp;
+                        Comandos de moderación</button>
+
+                    <button onclick="active(this)" id="CategoryBtn1"
+                        class="text-decoration-none btn btn-primary mt-2 my-1 p-2"><i
+                            class='fas fa-globe-europe ttt'></i>&nbsp; Comandos generales</button>
+
+                    <button onclick="active(this)" id="CategoryBtn2"
+                        class="text-decoration-none btn btn-primary mt-2 my-1 p-2"><i
+                            class='fas fa-hammer-war ttt'></i>&nbsp;&nbsp; Comandos de nivelación</button>
+
+                    <button onclick="active(this)" id="CategoryBtn3"
+                        class="text-decoration-none btn btn-primary mt-2 my-1 p-2"><i
+                            class='fas fas fa-crown ttt'></i>&nbsp;&nbsp; Comandos premium</button>
+
+                </div>
+            </div>
+            <div class="col-md-8 my-2">
+                <input type="text" class="w-100 search-box" oninput="search(this.value)"
+                    placeholder="Buscar comandos" />
+
+
+                <div class="mt-4"></div>
+
+        
+
+
+                <div class="commands-section" id="Category3">
+
+
+                    <div class="accordion accordion-flush mt-2" id="reactionrole">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingOne">
+                                <button class="accordion-button collapsed" data-bs-toggle="collapse"
+                                    data-bs-target="#freactionrole">
+                                    <span class='badge badge-vip rounded-pill'><i class='far fa-crown'></i></span>&nbsp;
+                                    /ask&nbsp; <span class="command-descreption">- Haz una pregunta a una inteligencia
+                                        artificial</span>
+                                </button>
+                            </h2>
+                            <div id="freactionrole" class="accordion-collapse collapse" data-bs-parent="#reactionrole">
+                                <div class="accordion-body">
+                                    <span>Ejemplo:</span> <br />
+                                    <span class="examples">
+
+                                        /ask <prompt>
+
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="accordion accordion-flush mt-2" id="slowmode">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingOne">
+                                <button class="accordion-button collapsed" data-bs-toggle="collapse"
+                                    data-bs-target="#fslowmode">
+                                    <span class='badge badge-vip rounded-pill'><i class='far fa-crown'></i></span>&nbsp;
+                                    /imagine&nbsp; <span class="command-descreption">- ¡Genera una imagen usando
+                                        texto!</span>
+                                </button>
+                            </h2>
+                            <div id="fslowmode" class="accordion-collapse collapse" data-bs-parent="#slowmode">
+                                <div class="accordion-body">
+                                    <span>Ejemplo:</span> <br />
+                                    <span class="examples">
+
+                                        /imagine <prompt>
+
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="accordion accordion-flush mt-2" id="slowmode">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingOne">
+                                <button class="accordion-button collapsed" data-bs-toggle="collapse"
+                                    data-bs-target="#fslowmode">
+                                    <span class='badge badge-vip rounded-pill'><i class='far fa-crown'></i></span>&nbsp;
+                                    Coming Soon&nbsp; <span class="command-descreption">- Pronto se agregara todos los
+                                        comandos a la web</span>
+                                </button>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+
+    <div class="footer-clean bg-dark">
+        <footer>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3>Accesos</h3>
+                        <ul>
+                            <li><a href="#Features">Destacados</a></li>
+                            <li><a href="#Statics">Estadisticas</a></li>
+                            <li><a href="#FAQ">Terminos y condiciones</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3>Acerca de</h3>
+                        <ul>
+                            <li><a href="comandos.html">Comandos</a></li>
+                            <li><a href="productos.html">Servicios</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3>Links</h3>
+                        <ul>
+                            <li><a href="https://discord.gg/Fy6tUCJPAq">Soporte</a></li>
+                            <li><a
+                                    href="https://discord.com/api/oauth2/authorize?client_id=1176278196723908719&permissions=947243411649&scope=bot%20applications.commands">Invitar
+                                    Bot</a></li>
+                            <li><a href="https://www.youtube.com/channel/UCRFbPvF1njSGum0aN-_dOyQ">YouTube</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 item social"><a href="https://discord.gg/Fy6tUCJPAq"><ion-icon
+                                name="logo-discord"></ion-icon></a><a
+                            href="https://web.facebook.com/edgajuman2006"><ion-icon
+                                name="logo-facebook"></ion-icon></a><a
+                            href="https://www.youtube.com/channel/UCRFbPvF1njSGum0aN-_dOyQ"><ion-icon
+                                name="logo-youtube"></ion-icon></a><a
+                            href="https://wa.me/18292809615?text=Hola,%20wenas"><ion-icon
+                                name="logo-whatsapp"></ion-icon></a>
+                        <p class="copyright">ChatGPT © 2023</p>
+                    </div>
+                </div>
+            </div>
+            <div class="page-footer font-small text-light mt-5">
+                <div class="footer-copyright text-center">Bot creado por
+                    <a href="https://github.com/Akiomae">iTz Arshia</a>
+                    en conjunto de TEAM Akiomae CreMent
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <input id="commands"
+        value="[{&#34;title&#34;:&#34;&lt;i class=&#39;fas fa-gift ttt&#39;&gt;&lt;/i&gt;&amp;nbsp; Moderation Commands&#34;,&#34;commands&#34;:[&#34;ban&#34;,&#34;kick&#34;,&#34;mute&#34;]},{&#34;title&#34;:&#34;&lt;i class=&#39;fas fa-globe-europe ttt&#39;&gt;&lt;/i&gt;&amp;nbsp; General Commands&#34;,&#34;commands&#34;:[&#34;help&#34;,&#34;ping&#34;,&#34;invite&#34;]},{&#34;title&#34;:&#34;&lt;i class=&#39;fas fa-hammer-war ttt&#39;&gt;&lt;/i&gt;&amp;nbsp;&amp;nbsp; Leveling Commands&#34;,&#34;commands&#34;:[&#34;leaderboard&#34;]},{&#34;title&#34;:&#34;&lt;i class=&#39;fas fas fa-crown ttt&#39;&gt;&lt;/i&gt;&amp;nbsp; Premium Commands&#34;,&#34;commands&#34;:[&#34;reactionrole&#34;,&#34;slowmode&#34;]}]"
+        hidden />
+    <script src="scrobeal.js"></script>
+    <script src="/fontawesome/all.min.js"></script>
+    <script src="/js/animation.js"></script>
+    <script>
+        function active(elm) {
+            document.getElementById("CategoryBtnAll").classList.remove("active");
+
+            document.getElementById("CategoryBtn0").classList.remove("active");
+            document.getElementById("Category0").setAttribute("hidden", "");
+
+            document.getElementById("CategoryBtn1").classList.remove("active");
+            document.getElementById("Category1").setAttribute("hidden", "");
+
+            document.getElementById("CategoryBtn2").classList.remove("active");
+            document.getElementById("Category2").setAttribute("hidden", "");
+
+            document.getElementById("CategoryBtn3").classList.remove("active");
+            document.getElementById("Category3").setAttribute("hidden", "");
+
+            elm.classList.add("active");
+            if (elm.id.replace("CategoryBtn", "") == "All") {
+
+                document.getElementById("Category0").removeAttribute("hidden");
+
+                document.getElementById("Category1").removeAttribute("hidden");
+
+                document.getElementById("Category2").removeAttribute("hidden");
+
+                document.getElementById("Category3").removeAttribute("hidden");
+
+            } else {
+                document.getElementById("Category" + elm.id.replace("CategoryBtn", "")).removeAttribute("hidden");
+            }
+        }
+        document.getElementById("CategoryBtnAll").click();
+        function search(arg) {
+            let commands = JSON.parse(document.getElementById("commands").value);
+            let cmds = [];
+            commands.forEach(category => {
+                category.commands.forEach(command => {
+                    cmds.push(command);
+                })
+            })
+            let existedCmds = cmds.filter(obj => obj.includes(arg.toLowerCase()));
+            cmds.forEach(cmd => {
+                document.getElementById(cmd).setAttribute("hidden", "");
+            })
+            existedCmds.forEach(cmd => {
+                document.getElementById(cmd).removeAttribute("hidden");
+            })
+        }
+    </script>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+
+</html>

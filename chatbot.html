@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="chat.css">
+    <style>
+
+        #emoji-panel {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px #ccc;
+            z-index: 1;
+        }
+
+        #emoji-panel span {
+            cursor: pointer;
+            margin: 5px;
+            font-size: 20px;
+        }
+
+        #send-button {
+            background-color: #4CAF50; /* Color de fondo inicial */
+            color: white;
+            padding: 7px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #send-button:hover {
+            background-color: #45a07a; /* Nuevo color de fondo al pasar el puntero */
+        }
+    </style>
+    <title>Chatbot</title>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-box" id="chat-box">
+            <div class="message bot-message">
+                <img src="descarga.png" alt="Bot Icon" class="bot-icon">
+                Hola, soy ChatGPT ¿en qué puedo ayudarte? usa <b>e!help</b>
+            </div>
+        </div>
+        <img src="escribiendo.gif" id="typing-animation" style="display: none;">
+        <div class="user-input">
+            <input type="text" id="user-input" placeholder="Escribe tu mensaje...">
+            <button id="emoji-button">😄</button>
+            <button id="send-button">Enviar</button>
+            <div id="emoji-panel">
+                <span onclick="insertEmoji('😊')">😊</span>
+                <span onclick="insertEmoji('😂')">😂</span>
+                <span onclick="insertEmoji('👍')">👍</span>
+                <span onclick="insertEmoji('❤️')">❤️</span>
+                <span onclick="insertEmoji('🎉')">🎉</span>
+                <span onclick="insertEmoji('🌈')">🌈</span>
+                <span onclick="insertEmoji('🍕')">🍕</span>
+                <span onclick="insertEmoji('📣')">📣</span>
+                <span onclick="insertEmoji('👋')">👋</span>
+                <span onclick="insertEmoji('🐶')">🐶</span>
+                <span onclick="insertEmoji('🐱')">🐱</span>
+                <span onclick="insertEmoji('🇵🇪')">🇵🇪</span>
+                <span onclick="insertEmoji('🇦🇷')">🇦🇷</span>
+                <span onclick="insertEmoji('🇧🇷')">🇧🇷</span>
+                <span onclick="insertEmoji('🇪🇨')">🇪🇨</span>
+                <span onclick="insertEmoji('🇪🇸')">🇪🇸</span>
+                <span onclick="insertEmoji('🇯🇵')">🇯🇵</span>
+
+            </div>
+        </div>
+    <script src="chatbot.js"></script>
+    <script>
+        document.getElementById('emoji-button').addEventListener('click', toggleEmojiPanel);
+
+        function toggleEmojiPanel() {
+            const emojiPanel = document.getElementById('emoji-panel');
+            emojiPanel.style.display = (emojiPanel.style.display === 'block') ? 'none' : 'block';
+        }
+
+        function insertEmoji(emoji) {
+            const userInput = document.getElementById('user-input');
+            const currentText = userInput.value;
+            userInput.value = currentText + emoji;
+            toggleEmojiPanel();
+        }
+    </script>
+</body>
+</html>

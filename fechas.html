@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Formato de fechas DISCORD</title>
+    <link rel="icon" type="image/x-icon" href="fecha.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="description" content="El team Akiomae Crement presentan un convertidor de fechas a formato de Discord, para un uso facil en la plataforma.">
+<meta property="og:site_name" content="ChatGPTservice">
+<meta property="og:url" content="https://edgabot.akiomae.com/pages/services/fechas.html">
+<meta name="title" content="Formato de fechas">
+<meta name="description" content="El team Akiomae Crement presentan un convertidor de fechas a formato de Discord, para un uso facil en la plataforma.">
+<meta name="robots" content="index, follow">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="language" content="Spanish">
+<meta property="og:image" content="https://cdn.discordapp.com/attachments/1052090566575390760/1168753115277836358/fecha.png?ex=6552e929&is=65407429&hm=ea04d4f891a117a5c080845364d28a723debd652e413db9244745ddc4ce25bf2&">
+<meta property="og:image:width" content="720">
+<meta property="og:image:height" content="720">
+<meta property="og:image:type" content="image/png">
+
+<script type="text/javascript" src="https://cdn.diclotrans.com/sdk/v1/21564/e800d47eed6afb6e0bc789e961dc83a6a2777dc5/lib.js"></script>
+
+<script type="text/javascript" src="https://cdn.diclotrans.com/sdk/v1/21566/e337b9228d0822c655e2011b044dd97e222d5d46/lib.js"></script>
+
+<script type="text/javascript" src="https://cdn.diclotrans.com/sdk/v1/21720/9f5430a8ffae533e52da03d69fbc426a00809e17/lib.js"></script>
+    <style>
+body {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+       #app {
+         position: relative;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         min-height: 100vh;
+      }
+       .card {
+         background: rgba(255, 255, 255, 0.349);
+         box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+           rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+         box-sizing: border-box;
+         padding: 32px;
+         border-radius: 4px;
+         max-width: 520px;
+         margin: 32px;
+      }
+       .card h1 {
+         margin: 0 0 16px 0;
+         font-size: 1.5rem;
+         font-weight: normal;
+      }
+       .card p {
+         margin: 0 0 16px 0;
+      }
+       .card p:last-of-type {
+         margin-bottom: 0;
+      }
+       .card input, .card select {
+         border-style: solid;
+         border-color: rgb(0, 0, 0);
+         border-width: 2px;
+         border-radius: 4px;
+         width: 100%;
+         max-width: 100%;
+         font-size: 1rem;
+         box-sizing: border-box;
+         border-radius: 0;
+      }
+
+      .card input[type="button"] {
+        border: none;
+        background: #08c;
+        color: #fff;
+        padding: 6px 12px;
+        cursor: pointer;
+        transition: background 0.2s;
+        font-family: Helvetica, sans-serif;
+        font-size: 0.9rem;
+        width: auto;
+      }
+
+      .card input[type="button"]:hover,
+      .card input[type="button"]:focus {
+        outline: none;
+        background: rgba(0, 136, 204, 0.7);
+      }
+       .card input {
+         font-family: Helvetica, sans-serif;
+         padding: 6px 7px;
+      }
+       .card input[type="text"] {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        font-size: 0.95rem;
+      }
+       .card select {
+         padding: 8px 4px;
+      }
+       .card code {
+         background: rgba(0, 0, 0, 0.1);
+      }
+       .card pre {
+         box-sizing: border-box;
+         background: rgb(252, 55, 209);
+         text-align: center;
+         color: white;
+         padding: 16px;
+         cursor: pointer;
+      }
+       .card .divider {
+         width: 100%;
+         height: 2px;
+         background: #eee;
+         margin: 24px 0;
+      }
+       .card .discord {
+         position: relative;
+         box-sizing: border-box;
+         margin: 16px 0 0 0;
+         padding-left: 72px;
+         padding-top: 15px;
+         padding-bottom: 15px;
+         padding-right: 15px;
+         background: #36393f;
+         color: #dcddde;
+         line-height: 1.375rem;
+      }
+       .card .discord:before {
+         content: url('');
+         position: absolute;
+         left: 15px;
+         height: 40px;
+         width: 40px;
+         border-radius: 100%;
+         background: rgb(255, 64, 207);
+         text-align: center;
+         line-height: 40px;
+         margin-top: calc(4px - 0.125rem);
+         font-weight: bold;
+         cursor: pointer;
+      }
+       .card .discord-name {
+         margin-right: 0.25rem;
+         cursor: pointer;
+      }
+       .card .discord-name:hover {
+         text-decoration: underline;
+      }
+       .card .discord-time {
+         font-size: 0.75rem;
+         vertical-align: baseline;
+         color: #72767d;
+      }
+       .card .discord-date {
+         background: rgba(255, 255, 255, 0.06);
+         position: relative;
+         padding: 2px 4px;
+         border-radius: 4px;
+         box-sizing: border-box;
+      }
+       .card .discord-date:before, .card .discord-date:after {
+         opacity: 0;
+         transform: scale(0.95);
+         transition: opacity 0.1s, transform 0.1s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+         will-change: opacity, transform;
+         pointer-events: none;
+         background: #000;
+         box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+           rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+      }
+       .card .discord-date:hover:before, .card .discord-date:hover:after {
+         opacity: 1;
+      }
+       .card .discord-date:hover:before {
+         transform: scale(1) rotate(45deg);
+      }
+       .card .discord-date:hover:after {
+         transform: scale(1);
+      }
+       .card .discord-date:before {
+         content: "";
+         position: absolute;
+         left: 50%;
+         bottom: calc(100% + 4px);
+         height: 8px;
+         width: 8px;
+         transform: scale(0.98) rotate(45deg);
+      }
+       .card .discord-date:after {
+         content: attr(datadate);
+         position: absolute;
+         left: calc(50% - 124px);
+         bottom: calc(100% + 8px);
+         width: 248px;
+         text-align: center;
+         font-size: 0.8rem;
+         border-radius: 4px;
+         padding-top: 3px;
+         padding-bottom: 3px;
+         font-weight: bold;
+         transform: scale(0.98);
+      }
+       .full-width {
+         display: flex;
+         margin-bottom: 16px;
+         gap: 12px;
+      }
+       @media screen and (max-width: 550px) {
+         .full-width {
+           flex-direction: column;
+           gap: 16px;
+        }
+      }
+
+      .card {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="https://unpkg.com/htm@3.1.0" crossorigin></script>
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/moment@2.29.1/min/moment.min.js" crossorigin></script>
+    <script src="https://unpkg.com/chrono-node@2.4.1/dist/bundle.js" crossorigin></script>
+    <script src="https://unpkg.com/react-hook-form@7.27.1/dist/index.umd.js" crossorigin></script>
+    <script>
+      const html = htm.bind(React.createElement);
+      
+      function formatForDiscord(date, format = null) {
+        let formatted = `<t:${date.unix()}`;
+
+        if (format && typeof format === "string" && format.length > 0) {
+          formatted += `:${format}`;
+        }
+
+        return `${formatted}>`;
+      }
+
+      function renderForDiscord(date, format) {
+        if (format === "F") {
+          return date.format("dddd, MMMM DD, YYYY HH:mm a");
+        }
+
+        if (format === "d") {
+          return date.format("DD/MM/YYYY");
+        }
+
+        if (format === "D") {
+          return date.format("DD MMMM YYYY");
+        }
+
+        if (format === "t") {
+          return date.format("HH:mm");
+        }
+
+        if (format === "T") {
+          return date.format("HH:mm:ss");
+        }
+
+        if (format === "R") {
+          return date.fromNow();
+        }
+
+        return date.format("MMMM DD, YYYY HH:mm");
+      }
+
+      function App() {
+        const [datetime, setDatetime] = React.useState(moment());
+        const [discordFormat, setDiscordFormat] = React.useState(
+          formatForDiscord(datetime)
+        );
+
+        const { register, watch, setValue } = ReactHookForm.useForm();
+
+        const dateText = watch("datetext");
+        const date = watch("date");
+        const time = watch("time");
+        const format = watch("format");
+        
+        const clearText = e => {
+          e.preventDefault();
+          setValue("datetext", "");
+        };
+
+        React.useEffect(async () => {
+          const parsedDate = chrono.parseDate(dateText);
+
+          if (parsedDate) {
+            const t = moment(parsedDate);
+
+            await setDatetime(t);
+            await setDiscordFormat(formatForDiscord(t, format));
+            setValue("date", t.format("YYYY-MM-DD"));
+            setValue("time", t.format("HH:mm"));
+          } else if (date && time && format) {
+            const newDatetime = moment(date + " " + time, "YYYY-MM-DD HH:mm");
+
+            await setDatetime(newDatetime);
+            await setDiscordFormat(formatForDiscord(newDatetime, format));
+          }
+        }, [dateText, date, time, format]);
+
+        return html`
+          <div className="card">
+            <h1>Convertir fecha y hora a formato de Discord</h1>
+            <p>
+              El team Akiomae Crement presentan un convertidor de fechas a formato de Discord, para un uso facil en la plataforma.
+            </p>
+
+            <div className="divider"></div>
+
+            <p>Ingrese su hora local, el valor predeterminado es la fecha/hora actual</p>
+            <form>
+              <div className="full-width">
+                <input
+                  type="text"
+                  defaultValue=""
+                  placeholder="Escribe una fecha aquí"
+                  ...${register("datetext")}
+                />
+                <input
+                  type="button"
+                  onClick="${clearText}"
+                  value="Eliminar"
+                />
+              </div>
+              <div className="full-width">
+                <input
+                  type="date"
+                  defaultValue="${datetime.format("YYYY-MM-DD")}"
+                  disabled="${!!dateText}"
+                  ...${register("date")}
+                />
+                <input
+                  type="time"
+                  defaultValue="${datetime.format("HH:mm")}"
+                  disabled="${!!dateText}"
+                  ...${register("time")}
+                />
+              </div>
+              <select ...${register("format")}>
+                <option value="" disabled>
+                  Seleccionar formato para discord
+                </option>
+                <option value="f">
+                  Hora de cita corta (${renderForDiscord(datetime, "f")})
+                </option>
+                <option value="F">
+                  Fecha larga (${renderForDiscord(datetime, "F")})
+                </option>
+                <option value="d">
+                  Cita corta (${renderForDiscord(datetime, "d")})
+                </option>
+                <option value="D">
+                  Cita larga (${renderForDiscord(datetime, "D")})
+                </option>
+                <option value="t">
+                  Tiempo corto (${renderForDiscord(datetime, "t")})
+                </option>
+                <option value="T">
+                  Tiempo largo (${renderForDiscord(datetime, "T")})
+                </option>
+                <option value="R">
+                  Tiempo relativo (${renderForDiscord(datetime, "R")})
+                </option>
+              </select>
+            </form>
+
+            <div className="divider"></div>
+
+            <p>Copia todo lo que está en el cuadro rosa y pégalo en discord.</p>
+            <pre>${discordFormat}</pre>
+
+            <div className="divider"></div>
+
+            <p>Así debería verse en discord.</p>
+            <div className="discord">
+              <div>
+                <b className="discord-name">Akiomae</b><span> </span>
+                <span className="discord-time">Hoy a las 15:37</span>
+              </div>
+              La fecha es<span> </span>
+              <span
+                className="discord-date"
+                dataDate="${renderForDiscord(datetime, "F")}"
+              >
+                ${renderForDiscord(datetime, format)}
+              </span>
+            </div>
+          </div>
+        `;
+      }
+
+      ReactDOM.render(html`<${App} />`, document.getElementById("app"));
+
+      document.addEventListener('DOMContentLoaded', function () {
+      const elementsToAnimate = document.querySelectorAll('.card');
+      elementsToAnimate.forEach((element, index) => {
+        setTimeout(() => {
+          element.style.opacity = 1;
+          element.style.transform = 'translateY(0)';
+        }, 100 * index);
+      });
+    });
+
+    </script>
+  </body>
+</html>
