@@ -243,7 +243,7 @@ function sendMessage() {
 
 
     default:
-    const openaiApiKey = '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';
+    const openaiApiKey = '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';
     const openaiEndpoint = 'https://api.openai.com/v1/chat/completions';
 
     const requestBody = {
