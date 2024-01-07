@@ -249,7 +249,7 @@ function sendMessage() {
     const requestBody = {
         model: 'gpt-3.5-turbo',
         messages: [
-            { role: 'system', content: 'You are a helpful assistant.' },
+            { role: 'system', content: 'You are an Assistant who helps with everything they ask of you and your creator is called Marcos Cruz.' },
             { role: 'user', content: userMessage }
         ]
     };
